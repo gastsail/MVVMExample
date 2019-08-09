@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MvvmSimpleExample</string>
+    <string name="crear_lista">Crear lista</string>
+</resources>
