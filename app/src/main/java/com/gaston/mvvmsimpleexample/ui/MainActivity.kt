@@ -6,8 +6,10 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.gaston.mvvmsimpleexample.R
+import com.gaston.mvvmsimpleexample.domain.FrutasUseCase
 import com.gaston.mvvmsimpleexample.ui.modelo.Frutas
 import com.gaston.mvvmsimpleexample.viewmodel.MyViewModel
+import com.gaston.mvvmsimpleexample.viewmodel.MyViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupViewModelAndObserve() {
-        viewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+        viewModel = ViewModelProviders.of(this,MyViewModelFactory(FrutasUseCase())).get(MyViewModel::class.java)
         val frutasObserver = Observer<List<Frutas>> {
 
             for (fruta in it) {

@@ -9,9 +9,8 @@ import com.gaston.mvvmsimpleexample.ui.modelo.Frutas
 /**
  * Created by Gastón Saillén on 09 August 2019
  */
-class MyViewModel:ViewModel() {
+class MyViewModel(val frutasUseCase: FrutasUseCase):ViewModel() {
 
-    val frutasUseCase = FrutasUseCase()
     private val listData = MutableLiveData<List<Frutas>>()
 
     fun setListData(listaFrutas:List<Frutas>){
